@@ -1,12 +1,28 @@
+import cell from "./components/cell";
+
 const board = document.createElement('div');
-const hundredDivs = new Array(10).fill(new Array(10));
+const row = document.createElement('div');
+row.classList.add('game-row');
 
 board.id = 'game-board';
 
-board.innerHTML = hundredDivs.map((item, index) =>/*html*/ `
-<div class='game-row'>${item.map((_, index) => /*html*/`
-  <div class='game-cell'>${index}</div>
-  `).join('')}</div>
-`).join('');
+cloneRows(board);
+
+function cloneRows(parentElement) {
+    for (let i = 0; i < 10; i++) {
+        const newRow = row.cloneNode();
+        newRow.id = String.fromCharCode(97 + i);
+        parentElement.appendChild(newRow);
+        cloneCells(newRow);
+    }
+}
+
+function cloneCells(parentElement) {
+    for (let i = 1; i <= 10; i++){
+        const newCell = cell.cloneNode();
+        newCell.id = `${parentElement.id}${i}`;
+        parentElement.appendChild(newCell);
+    }
+}
 
 export default board;
