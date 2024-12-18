@@ -4,7 +4,11 @@
     grid-template-rows: repeat(10, 50px);
 }
 
-.game-cell {
+.game-row {
+    display: flex;
+}
+
+.game-column {
     display: flex;
     justify-content: center;
     align-items: center;
