@@ -1,4 +1,17 @@
-:root{
+:root {
     font-size: 20px;
     --cell-size: 2.5rem;
+}
+
+#app {
+    width: fit-content;
+}
+
+#game {
+    width: fit-content;
+}
+
+body {
+    display: flex;
+    justify-content: center;
 }

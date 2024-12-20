@@ -1,3 +1,4 @@
+import '../styles/board.css'
 import cell from "./components/cell";
 
 const board = document.createElement('div');
